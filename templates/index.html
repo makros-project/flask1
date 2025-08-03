@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Biodata Anies Baswedan</title>
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <div class="container py-5">
+    <div class="card mx-auto" style="max-width: 600px;">
+      <img src="{{ person.foto_url }}" class="card-img-top" alt="Foto Anies Baswedan">
+      <div class="card-body">
+        <h2 class="card-title">{{ person.nama }}</h2>
+        <p><strong>Tempat & Tanggal Lahir:</strong> {{ person.lahir }}</p>
+        <p><strong>Agama:</strong> {{ person.agama }}</p>
+        <p><strong>Orangtua:</strong> Ayah: {{ person.ayah }}, Ibu: {{ person.ibu }}</p>
+        <p><strong>Istri:</strong> {{ person.istri }}</p>
+        <p><strong>Anak-anak:</strong> {{ person.anak | join(', ') }}</p>
+        <h5>Karier:</h5>
+        <ul>
+          {% for job in person.karier %}
+          <li>{{ job }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
